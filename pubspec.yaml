@@ -1,0 +1,53 @@
+name: isbul
+description: İşine Bak - Türkiye'nin en hızlı iş arayan-işveren buluşma platformu
+publish_to: "none"
+version: 1.0.0+1
+
+environment:
+  sdk: ">=3.3.0 <4.0.0"
+  flutter: ">=3.19.0"
+
+dependencies:
+  flutter:
+    sdk: flutter
+
+  # Routing
+  go_router: ^14.8.1
+
+  # HTTP
+  http: ^1.2.2
+
+  # State management
+  provider: ^6.1.2
+
+  # Secure storage (JWT)
+  flutter_secure_storage: ^9.2.2
+
+  # Images
+  cached_network_image: ^3.4.1
+  image_picker: ^1.1.2
+
+  # UI helpers
+  intl: ^0.19.0
+  badges: ^3.1.2
+
+  # RevenueCat
+  purchases_flutter: ^8.0.0
+
+  # Pin code input for OTP
+  pin_code_fields: ^8.0.1
+
+  # Shimmer loading
+  shimmer: ^3.0.0
+
+  cupertino_icons: ^1.0.8
+
+dev_dependencies:
+  flutter_test:
+    sdk: flutter
+  flutter_lints: ^4.0.0
+
+flutter:
+  uses-material-design: true
+  assets:
+    - assets/images/
