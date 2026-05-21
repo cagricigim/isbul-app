@@ -1,0 +1,75 @@
+{
+  "expo": {
+    "name": "İşine Bak",
+    "slug": "is-bul",
+    "version": "1.0.0",
+    "orientation": "portrait",
+    "icon": "./assets/images/icon.png",
+    "scheme": "isinebak",
+    "userInterfaceStyle": "automatic",
+    "newArchEnabled": false,
+    "splash": {
+      "image": "./assets/images/icon.png",
+      "resizeMode": "contain",
+      "backgroundColor": "#ffffff"
+    },
+    "ios": {
+      "supportsTablet": false,
+      "bundleIdentifier": "com.iscibul.app",
+      "infoPlist": {
+        "NSCameraUsageDescription": "Profil fotoğrafı ve belge yüklemek için kamera erişimi gereklidir.",
+        "NSPhotoLibraryUsageDescription": "Profil fotoğrafı ve belge yüklemek için fotoğraf kütüphanesi erişimi gereklidir.",
+        "NSPhotoLibraryAddUsageDescription": "Fotoğrafları kaydetmek için fotoğraf kütüphanesi erişimi gereklidir.",
+        "ITSAppUsesNonExemptEncryption": false
+      }
+    },
+    "android": {
+      "package": "com.iscibul.app",
+      "versionCode": 33,
+      "backgroundColor": "#0F0E0C",
+      "permissions": [
+        "android.permission.CAMERA",
+        "android.permission.READ_EXTERNAL_STORAGE",
+        "android.permission.WRITE_EXTERNAL_STORAGE",
+        "android.permission.RECEIVE_BOOT_COMPLETED",
+        "android.permission.VIBRATE",
+        "android.permission.RECORD_AUDIO"
+      ]
+    },
+    "web": {
+      "favicon": "./assets/images/icon.png"
+    },
+    "plugins": [
+      [
+        "expo-build-properties",
+        {
+          "android": {
+            "newArchEnabled": false,
+            "buildFeatures": {
+              "buildConfig": true
+            }
+          }
+        }
+      ],
+      "expo-router",
+      "expo-font",
+      "expo-web-browser",
+      [
+        "expo-image-picker",
+        {
+          "photosPermission": "Profil fotoğrafı yüklemek için fotoğraf kütüphanesi erişimi gereklidir.",
+          "cameraPermission": "Profil fotoğrafı çekmek için kamera erişimi gereklidir."
+        }
+      ]
+    ],
+    "experiments": {
+      "typedRoutes": true
+    },
+    "owner": "cagricigim",
+    "extra": {
+      "eas": {
+        "projectId": "d284818e-e976-4765-973f-4703f25ad089"
+      }
+    }
+  }
+}
