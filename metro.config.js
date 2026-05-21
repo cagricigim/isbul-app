@@ -1,14 +1,21 @@
 const { getDefaultConfig } = require("expo/metro-config");
-  const path = require("path");
+const path = require("path");
 
-  const projectRoot = __dirname;
+const projectRoot = __dirname;
+const monorepoRoot = path.resolve(projectRoot, "../..");
 
-  const config = getDefaultConfig(projectRoot);
+const config = getDefaultConfig(projectRoot);
 
-  // Resolve @workspace/api-client-react from local lib directory
-  config.resolver.extraNodeModules = {
-    "@workspace/api-client-react": path.resolve(projectRoot, "lib/api-client-react"),
-  };
+// Watch only specific monorepo packages that the app actually imports,
+// not the entire monorepo root (which causes Metro to crash on temp files).
+const monorepoPackages = [
+  path.resolve(monorepoRoot, "lib/api-client-react"),
+];
 
-  module.exports = config;
-  
+config.watchFolders = monorepoPackages;
+
+// Enable symlink following so Metro can resolve assets (e.g. Feather.ttf)
+// inside pnpm's symlinked node_modules.
+config.resolver.unstable_enableSymlinks = true;
+
+module.exports = config;
